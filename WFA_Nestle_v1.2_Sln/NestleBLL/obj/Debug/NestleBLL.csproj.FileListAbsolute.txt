@@ -1,0 +1,12 @@
+C:\Users\cagri\source\repos\WFA_Nestle_v1.2_Sln\NestleBLL\bin\Debug\NestleBLL.dll.config
+C:\Users\cagri\source\repos\WFA_Nestle_v1.2_Sln\NestleBLL\bin\Debug\NestleBLL.dll
+C:\Users\cagri\source\repos\WFA_Nestle_v1.2_Sln\NestleBLL\bin\Debug\NestleBLL.pdb
+C:\Users\cagri\source\repos\WFA_Nestle_v1.2_Sln\NestleBLL\bin\Debug\EntityFramework.dll
+C:\Users\cagri\source\repos\WFA_Nestle_v1.2_Sln\NestleBLL\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\cagri\source\repos\WFA_Nestle_v1.2_Sln\NestleBLL\bin\Debug\EntityFramework.xml
+C:\Users\cagri\source\repos\WFA_Nestle_v1.2_Sln\NestleBLL\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\cagri\source\repos\WFA_Nestle_v1.2_Sln\NestleBLL\obj\Debug\NestleBLL.csprojAssemblyReference.cache
+C:\Users\cagri\source\repos\WFA_Nestle_v1.2_Sln\NestleBLL\obj\Debug\NestleBLL.csproj.CoreCompileInputs.cache
+C:\Users\cagri\source\repos\WFA_Nestle_v1.2_Sln\NestleBLL\obj\Debug\NestleBLL.csproj.CopyComplete
+C:\Users\cagri\source\repos\WFA_Nestle_v1.2_Sln\NestleBLL\obj\Debug\NestleBLL.dll
+C:\Users\cagri\source\repos\WFA_Nestle_v1.2_Sln\NestleBLL\obj\Debug\NestleBLL.pdb

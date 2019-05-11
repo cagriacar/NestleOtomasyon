@@ -1,0 +1,199 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="db_Nestle2ModelStoreContainer" CdmEntityContainer="NestleContext">
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="db_Nestle2Model.sysdiagrams">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_BasvuruForm">
+      <EntityTypeMapping TypeName="db_Nestle2Model.tbl_BasvuruForm">
+        <MappingFragment StoreEntitySet="tbl_BasvuruForm">
+          <ScalarProperty Name="basvuru_id" ColumnName="basvuru_id" />
+          <ScalarProperty Name="basvuruAdi" ColumnName="basvuruAdi" />
+          <ScalarProperty Name="basvuruSoyadi" ColumnName="basvuruSoyadi" />
+          <ScalarProperty Name="basvuruDogumTarihi" ColumnName="basvuruDogumTarihi" />
+          <ScalarProperty Name="basvuruCinsiyet" ColumnName="basvuruCinsiyet" />
+          <ScalarProperty Name="basvuruYabanciDil" ColumnName="basvuruYabanciDil" />
+          <ScalarProperty Name="basvuruAskerlikDurumu" ColumnName="basvuruAskerlikDurumu" />
+          <ScalarProperty Name="basvuruMedeniDurum" ColumnName="basvuruMedeniDurum" />
+          <ScalarProperty Name="basvuruEgitim" ColumnName="basvuruEgitim" />
+          <ScalarProperty Name="basvuruDeneyim" ColumnName="basvuruDeneyim" />
+          <ScalarProperty Name="basvuruAdres" ColumnName="basvuruAdres" />
+          <ScalarProperty Name="basvuruTelefon" ColumnName="basvuruTelefon" />
+          <ScalarProperty Name="basvuruMail" ColumnName="basvuruMail" />
+          <ScalarProperty Name="basvuruResim" ColumnName="basvuruResim" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_Departman">
+      <EntityTypeMapping TypeName="db_Nestle2Model.tbl_Departman">
+        <MappingFragment StoreEntitySet="tbl_Departman">
+          <ScalarProperty Name="departman_id" ColumnName="departman_id" />
+          <ScalarProperty Name="departmanAdi" ColumnName="departmanAdi" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_Depolama">
+      <EntityTypeMapping TypeName="db_Nestle2Model.tbl_Depolama">
+        <MappingFragment StoreEntitySet="tbl_Depolama">
+          <ScalarProperty Name="depo_id" ColumnName="depo_id" />
+          <ScalarProperty Name="depoAdi" ColumnName="depoAdi" />
+          <ScalarProperty Name="depoAdres" ColumnName="depoAdres" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_İnsanKaynaklari">
+      <EntityTypeMapping TypeName="db_Nestle2Model.tbl_İnsanKaynaklari">
+        <MappingFragment StoreEntitySet="tbl_İnsanKaynaklari">
+          <ScalarProperty Name="ik_id" ColumnName="ik_id" />
+          <ScalarProperty Name="per_id" ColumnName="per_id" />
+          <ScalarProperty Name="basvuru_id" ColumnName="basvuru_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_KullaniciBilgileri">
+      <EntityTypeMapping TypeName="db_Nestle2Model.tbl_KullaniciBilgileri">
+        <MappingFragment StoreEntitySet="tbl_KullaniciBilgileri">
+          <ScalarProperty Name="kullaniciId" ColumnName="kullaniciId" />
+          <ScalarProperty Name="kullaniciAdi" ColumnName="kullaniciAdi" />
+          <ScalarProperty Name="sifre" ColumnName="sifre" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_Kurumsal">
+      <EntityTypeMapping TypeName="db_Nestle2Model.tbl_Kurumsal">
+        <MappingFragment StoreEntitySet="tbl_Kurumsal">
+          <ScalarProperty Name="kurumsal_id" ColumnName="kurumsal_id" />
+          <ScalarProperty Name="hakkinda" ColumnName="hakkinda" />
+          <ScalarProperty Name="slogan" ColumnName="slogan" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_Lojistik">
+      <EntityTypeMapping TypeName="db_Nestle2Model.tbl_Lojistik">
+        <MappingFragment StoreEntitySet="tbl_Lojistik">
+          <ScalarProperty Name="lojistik_id" ColumnName="lojistik_id" />
+          <ScalarProperty Name="lojistikTuru" ColumnName="lojistikTuru" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_PersonelBilgileri">
+      <EntityTypeMapping TypeName="db_Nestle2Model.tbl_PersonelBilgileri">
+        <MappingFragment StoreEntitySet="tbl_PersonelBilgileri">
+          <ScalarProperty Name="per_id" ColumnName="per_id" />
+          <ScalarProperty Name="perAdi" ColumnName="perAdi" />
+          <ScalarProperty Name="perSoyadi" ColumnName="perSoyadi" />
+          <ScalarProperty Name="perDogumTarihi" ColumnName="perDogumTarihi" />
+          <ScalarProperty Name="perTcno" ColumnName="perTcno" />
+          <ScalarProperty Name="perUnvan" ColumnName="perUnvan" />
+          <ScalarProperty Name="perTelefon" ColumnName="perTelefon" />
+          <ScalarProperty Name="perAdres" ColumnName="perAdres" />
+          <ScalarProperty Name="peril" ColumnName="peril" />
+          <ScalarProperty Name="perilce" ColumnName="perilce" />
+          <ScalarProperty Name="perUlke" ColumnName="perUlke" />
+          <ScalarProperty Name="departman_id" ColumnName="departman_id" />
+          <ScalarProperty Name="perMail" ColumnName="perMail" />
+          <ScalarProperty Name="perResim" ColumnName="perResim" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_Satis">
+      <EntityTypeMapping TypeName="db_Nestle2Model.tbl_Satis">
+        <MappingFragment StoreEntitySet="tbl_Satis">
+          <ScalarProperty Name="satis_id" ColumnName="satis_id" />
+          <ScalarProperty Name="FirmaAdi" ColumnName="FirmaAdi" />
+          <ScalarProperty Name="SatisTarihi" ColumnName="SatisTarihi" />
+          <ScalarProperty Name="TeslimAdresi" ColumnName="TeslimAdresi" />
+          <ScalarProperty Name="TeslimSehir" ColumnName="TeslimSehir" />
+          <ScalarProperty Name="TeslimUlke" ColumnName="TeslimUlke" />
+          <ScalarProperty Name="TeslimTarihi" ColumnName="TeslimTarihi" />
+          <ScalarProperty Name="urun_id" ColumnName="urun_id" />
+          <ScalarProperty Name="satAdet" ColumnName="satAdet" />
+          <ScalarProperty Name="satisDurumu_id" ColumnName="satisDurumu_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_SatisDurumu">
+      <EntityTypeMapping TypeName="db_Nestle2Model.tbl_SatisDurumu">
+        <MappingFragment StoreEntitySet="tbl_SatisDurumu">
+          <ScalarProperty Name="satisDurumu_id" ColumnName="satisDurumu_id" />
+          <ScalarProperty Name="satıisDurumu" ColumnName="satıisDurumu" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_Sevkiyat">
+      <EntityTypeMapping TypeName="db_Nestle2Model.tbl_Sevkiyat">
+        <MappingFragment StoreEntitySet="tbl_Sevkiyat">
+          <ScalarProperty Name="sev_id" ColumnName="sev_id" />
+          <ScalarProperty Name="satis_id" ColumnName="satis_id" />
+          <ScalarProperty Name="lojistik_id" ColumnName="lojistik_id" />
+          <ScalarProperty Name="urun_id" ColumnName="urun_id" />
+          <ScalarProperty Name="sevAdres" ColumnName="sevAdres" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_Teklif">
+      <EntityTypeMapping TypeName="db_Nestle2Model.tbl_Teklif">
+        <MappingFragment StoreEntitySet="tbl_Teklif">
+          <ScalarProperty Name="teklif_id" ColumnName="teklif_id" />
+          <ScalarProperty Name="teklifNo" ColumnName="teklifNo" />
+          <ScalarProperty Name="satis_id" ColumnName="satis_id" />
+          <ScalarProperty Name="urun_id" ColumnName="urun_id" />
+          <ScalarProperty Name="teklifTutar" ColumnName="teklifTutar" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_UrunBilgisi">
+      <EntityTypeMapping TypeName="db_Nestle2Model.tbl_UrunBilgisi">
+        <MappingFragment StoreEntitySet="tbl_UrunBilgisi">
+          <ScalarProperty Name="urun_id" ColumnName="urun_id" />
+          <ScalarProperty Name="urun_adi" ColumnName="urun_adi" />
+          <ScalarProperty Name="uruntur_id" ColumnName="uruntur_id" />
+          <ScalarProperty Name="urunUretimTarihi" ColumnName="urunUretimTarihi" />
+          <ScalarProperty Name="urunFiyati" ColumnName="urunFiyati" />
+          <ScalarProperty Name="urunMiktari" ColumnName="urunMiktari" />
+          <ScalarProperty Name="depo_id" ColumnName="depo_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_UrunTuru">
+      <EntityTypeMapping TypeName="db_Nestle2Model.tbl_UrunTuru">
+        <MappingFragment StoreEntitySet="tbl_UrunTuru">
+          <ScalarProperty Name="uruntur_id" ColumnName="uruntur_id" />
+          <ScalarProperty Name="uruntur_adi" ColumnName="uruntur_adi" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="db_Nestle2Model.Store.sp_alterdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="db_Nestle2Model.Store.sp_creatediagram" />
+    <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="db_Nestle2Model.Store.sp_dropdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="db_Nestle2Model.Store.sp_helpdiagramdefinition">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="db_Nestle2Model.sp_helpdiagramdefinition_Result">
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="db_Nestle2Model.Store.sp_helpdiagrams">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="db_Nestle2Model.sp_helpdiagrams_Result">
+          <ScalarProperty Name="Database" ColumnName="Database" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Owner" ColumnName="Owner" />
+          <ScalarProperty Name="OwnerID" ColumnName="OwnerID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="db_Nestle2Model.Store.sp_renamediagram" />
+    <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="db_Nestle2Model.Store.sp_upgraddiagrams" />
+  </EntityContainerMapping>
+</Mapping>

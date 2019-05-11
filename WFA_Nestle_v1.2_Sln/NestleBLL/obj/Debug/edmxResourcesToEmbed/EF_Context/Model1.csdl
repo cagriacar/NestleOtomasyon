@@ -1,0 +1,432 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="db_Nestle2Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="tbl_BasvuruForm">
+    <Key>
+      <PropertyRef Name="basvuru_id" />
+    </Key>
+    <Property Name="basvuru_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="basvuruAdi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="basvuruSoyadi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="basvuruDogumTarihi" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="basvuruCinsiyet" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="basvuruYabanciDil" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="basvuruAskerlikDurumu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="basvuruMedeniDurum" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="basvuruEgitim" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="basvuruDeneyim" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="basvuruAdres" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="basvuruTelefon" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="basvuruMail" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="basvuruResim" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="tbl_İnsanKaynaklari" Relationship="Self.FK_tbl_İnsanKaynaklari_tbl_BasvuruForm" FromRole="tbl_BasvuruForm" ToRole="tbl_İnsanKaynaklari" />
+  </EntityType>
+  <EntityType Name="tbl_Departman">
+    <Key>
+      <PropertyRef Name="departman_id" />
+    </Key>
+    <Property Name="departman_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="departmanAdi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="tbl_PersonelBilgileri" Relationship="Self.FK_tbl_PersonelBilgileri_tbl_Departman" FromRole="tbl_Departman" ToRole="tbl_PersonelBilgileri" />
+  </EntityType>
+  <EntityType Name="tbl_Depolama">
+    <Key>
+      <PropertyRef Name="depo_id" />
+    </Key>
+    <Property Name="depo_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="depoAdi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="depoAdres" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="tbl_UrunBilgisi" Relationship="Self.FK_tbl_UrunBilgisi_tbl_Depolama" FromRole="tbl_Depolama" ToRole="tbl_UrunBilgisi" />
+  </EntityType>
+  <EntityType Name="tbl_İnsanKaynaklari">
+    <Key>
+      <PropertyRef Name="ik_id" />
+    </Key>
+    <Property Name="ik_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="per_id" Type="Int32" Nullable="false" />
+    <Property Name="basvuru_id" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="tbl_BasvuruForm" Relationship="Self.FK_tbl_İnsanKaynaklari_tbl_BasvuruForm" FromRole="tbl_İnsanKaynaklari" ToRole="tbl_BasvuruForm" />
+    <NavigationProperty Name="tbl_PersonelBilgileri" Relationship="Self.FK_tbl_İnsanKaynaklari_tbl_PersonelBilgileri" FromRole="tbl_İnsanKaynaklari" ToRole="tbl_PersonelBilgileri" />
+  </EntityType>
+  <EntityType Name="tbl_KullaniciBilgileri">
+    <Key>
+      <PropertyRef Name="kullaniciId" />
+    </Key>
+    <Property Name="kullaniciId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="kullaniciAdi" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="sifre" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbl_Kurumsal">
+    <Key>
+      <PropertyRef Name="kurumsal_id" />
+    </Key>
+    <Property Name="kurumsal_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="hakkinda" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="slogan" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbl_Lojistik">
+    <Key>
+      <PropertyRef Name="lojistik_id" />
+    </Key>
+    <Property Name="lojistik_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="lojistikTuru" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="tbl_Sevkiyat" Relationship="Self.FK_tbl_Sevkiyat_tbl_Lojistik" FromRole="tbl_Lojistik" ToRole="tbl_Sevkiyat" />
+  </EntityType>
+  <EntityType Name="tbl_PersonelBilgileri">
+    <Key>
+      <PropertyRef Name="per_id" />
+    </Key>
+    <Property Name="per_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="perAdi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="perSoyadi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="perDogumTarihi" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="perTcno" Type="String" MaxLength="11" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="perUnvan" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="perTelefon" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="perAdres" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="peril" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="perilce" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="perUlke" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="departman_id" Type="Int32" Nullable="false" />
+    <Property Name="perMail" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="perResim" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="tbl_Departman" Relationship="Self.FK_tbl_PersonelBilgileri_tbl_Departman" FromRole="tbl_PersonelBilgileri" ToRole="tbl_Departman" />
+    <NavigationProperty Name="tbl_İnsanKaynaklari" Relationship="Self.FK_tbl_İnsanKaynaklari_tbl_PersonelBilgileri" FromRole="tbl_PersonelBilgileri" ToRole="tbl_İnsanKaynaklari" />
+  </EntityType>
+  <EntityType Name="tbl_Satis">
+    <Key>
+      <PropertyRef Name="satis_id" />
+    </Key>
+    <Property Name="satis_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FirmaAdi" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="SatisTarihi" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="TeslimAdresi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="TeslimSehir" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="TeslimUlke" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="TeslimTarihi" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="urun_id" Type="Int32" Nullable="false" />
+    <Property Name="satAdet" Type="Int32" Nullable="false" />
+    <Property Name="satisDurumu_id" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="tbl_SatisDurumu" Relationship="Self.FK_tbl_Satis_tbl_SatisDurumu" FromRole="tbl_Satis" ToRole="tbl_SatisDurumu" />
+    <NavigationProperty Name="tbl_UrunBilgisi" Relationship="Self.FK_tbl_Satis_tbl_UrunBilgisi1" FromRole="tbl_Satis" ToRole="tbl_UrunBilgisi" />
+    <NavigationProperty Name="tbl_Sevkiyat" Relationship="Self.FK_tbl_Sevkiyat_tbl_Satis" FromRole="tbl_Satis" ToRole="tbl_Sevkiyat" />
+    <NavigationProperty Name="tbl_Teklif" Relationship="Self.FK_tbl_Teklif_tbl_Satis" FromRole="tbl_Satis" ToRole="tbl_Teklif" />
+  </EntityType>
+  <EntityType Name="tbl_SatisDurumu">
+    <Key>
+      <PropertyRef Name="satisDurumu_id" />
+    </Key>
+    <Property Name="satisDurumu_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="satıisDurumu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="tbl_Satis" Relationship="Self.FK_tbl_Satis_tbl_SatisDurumu" FromRole="tbl_SatisDurumu" ToRole="tbl_Satis" />
+  </EntityType>
+  <EntityType Name="tbl_Sevkiyat">
+    <Key>
+      <PropertyRef Name="sev_id" />
+    </Key>
+    <Property Name="sev_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="satis_id" Type="Int32" Nullable="false" />
+    <Property Name="lojistik_id" Type="Int32" Nullable="false" />
+    <Property Name="urun_id" Type="Int32" Nullable="false" />
+    <Property Name="sevAdres" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="tbl_Lojistik" Relationship="Self.FK_tbl_Sevkiyat_tbl_Lojistik" FromRole="tbl_Sevkiyat" ToRole="tbl_Lojistik" />
+    <NavigationProperty Name="tbl_Satis" Relationship="Self.FK_tbl_Sevkiyat_tbl_Satis" FromRole="tbl_Sevkiyat" ToRole="tbl_Satis" />
+    <NavigationProperty Name="tbl_UrunBilgisi" Relationship="Self.FK_tbl_Sevkiyat_tbl_UrunBilgisi" FromRole="tbl_Sevkiyat" ToRole="tbl_UrunBilgisi" />
+  </EntityType>
+  <EntityType Name="tbl_Teklif">
+    <Key>
+      <PropertyRef Name="teklif_id" />
+    </Key>
+    <Property Name="teklif_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="teklifNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="satis_id" Type="Int32" Nullable="false" />
+    <Property Name="urun_id" Type="Int32" Nullable="false" />
+    <Property Name="teklifTutar" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <NavigationProperty Name="tbl_Satis" Relationship="Self.FK_tbl_Teklif_tbl_Satis" FromRole="tbl_Teklif" ToRole="tbl_Satis" />
+    <NavigationProperty Name="tbl_UrunBilgisi" Relationship="Self.FK_tbl_Teklif_tbl_UrunBilgisi" FromRole="tbl_Teklif" ToRole="tbl_UrunBilgisi" />
+  </EntityType>
+  <EntityType Name="tbl_UrunBilgisi">
+    <Key>
+      <PropertyRef Name="urun_id" />
+    </Key>
+    <Property Name="urun_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="urun_adi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="uruntur_id" Type="Int32" Nullable="false" />
+    <Property Name="urunUretimTarihi" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="urunFiyati" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="urunMiktari" Type="Int32" Nullable="false" />
+    <Property Name="depo_id" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="tbl_Depolama" Relationship="Self.FK_tbl_UrunBilgisi_tbl_Depolama" FromRole="tbl_UrunBilgisi" ToRole="tbl_Depolama" />
+    <NavigationProperty Name="tbl_Satis" Relationship="Self.FK_tbl_Satis_tbl_UrunBilgisi1" FromRole="tbl_UrunBilgisi" ToRole="tbl_Satis" />
+    <NavigationProperty Name="tbl_Sevkiyat" Relationship="Self.FK_tbl_Sevkiyat_tbl_UrunBilgisi" FromRole="tbl_UrunBilgisi" ToRole="tbl_Sevkiyat" />
+    <NavigationProperty Name="tbl_Teklif" Relationship="Self.FK_tbl_Teklif_tbl_UrunBilgisi" FromRole="tbl_UrunBilgisi" ToRole="tbl_Teklif" />
+    <NavigationProperty Name="tbl_UrunTuru" Relationship="Self.FK_tbl_UrunBilgisi_tbl_UrunTuru" FromRole="tbl_UrunBilgisi" ToRole="tbl_UrunTuru" />
+  </EntityType>
+  <EntityType Name="tbl_UrunTuru">
+    <Key>
+      <PropertyRef Name="uruntur_id" />
+    </Key>
+    <Property Name="uruntur_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="uruntur_adi" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="tbl_UrunBilgisi" Relationship="Self.FK_tbl_UrunBilgisi_tbl_UrunTuru" FromRole="tbl_UrunTuru" ToRole="tbl_UrunBilgisi" />
+  </EntityType>
+  <Association Name="FK_tbl_İnsanKaynaklari_tbl_BasvuruForm">
+    <End Role="tbl_BasvuruForm" Type="Self.tbl_BasvuruForm" Multiplicity="1" />
+    <End Role="tbl_İnsanKaynaklari" Type="Self.tbl_İnsanKaynaklari" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_BasvuruForm">
+        <PropertyRef Name="basvuru_id" />
+      </Principal>
+      <Dependent Role="tbl_İnsanKaynaklari">
+        <PropertyRef Name="basvuru_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_PersonelBilgileri_tbl_Departman">
+    <End Role="tbl_Departman" Type="Self.tbl_Departman" Multiplicity="1" />
+    <End Role="tbl_PersonelBilgileri" Type="Self.tbl_PersonelBilgileri" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Departman">
+        <PropertyRef Name="departman_id" />
+      </Principal>
+      <Dependent Role="tbl_PersonelBilgileri">
+        <PropertyRef Name="departman_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_UrunBilgisi_tbl_Depolama">
+    <End Role="tbl_Depolama" Type="Self.tbl_Depolama" Multiplicity="1" />
+    <End Role="tbl_UrunBilgisi" Type="Self.tbl_UrunBilgisi" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Depolama">
+        <PropertyRef Name="depo_id" />
+      </Principal>
+      <Dependent Role="tbl_UrunBilgisi">
+        <PropertyRef Name="depo_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_İnsanKaynaklari_tbl_PersonelBilgileri">
+    <End Role="tbl_PersonelBilgileri" Type="Self.tbl_PersonelBilgileri" Multiplicity="1" />
+    <End Role="tbl_İnsanKaynaklari" Type="Self.tbl_İnsanKaynaklari" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_PersonelBilgileri">
+        <PropertyRef Name="per_id" />
+      </Principal>
+      <Dependent Role="tbl_İnsanKaynaklari">
+        <PropertyRef Name="per_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Sevkiyat_tbl_Lojistik">
+    <End Role="tbl_Lojistik" Type="Self.tbl_Lojistik" Multiplicity="1" />
+    <End Role="tbl_Sevkiyat" Type="Self.tbl_Sevkiyat" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Lojistik">
+        <PropertyRef Name="lojistik_id" />
+      </Principal>
+      <Dependent Role="tbl_Sevkiyat">
+        <PropertyRef Name="lojistik_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Satis_tbl_SatisDurumu">
+    <End Role="tbl_SatisDurumu" Type="Self.tbl_SatisDurumu" Multiplicity="1" />
+    <End Role="tbl_Satis" Type="Self.tbl_Satis" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_SatisDurumu">
+        <PropertyRef Name="satisDurumu_id" />
+      </Principal>
+      <Dependent Role="tbl_Satis">
+        <PropertyRef Name="satisDurumu_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Satis_tbl_UrunBilgisi1">
+    <End Role="tbl_UrunBilgisi" Type="Self.tbl_UrunBilgisi" Multiplicity="1" />
+    <End Role="tbl_Satis" Type="Self.tbl_Satis" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_UrunBilgisi">
+        <PropertyRef Name="urun_id" />
+      </Principal>
+      <Dependent Role="tbl_Satis">
+        <PropertyRef Name="urun_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Sevkiyat_tbl_Satis">
+    <End Role="tbl_Satis" Type="Self.tbl_Satis" Multiplicity="1" />
+    <End Role="tbl_Sevkiyat" Type="Self.tbl_Sevkiyat" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Satis">
+        <PropertyRef Name="satis_id" />
+      </Principal>
+      <Dependent Role="tbl_Sevkiyat">
+        <PropertyRef Name="satis_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Teklif_tbl_Satis">
+    <End Role="tbl_Satis" Type="Self.tbl_Satis" Multiplicity="1" />
+    <End Role="tbl_Teklif" Type="Self.tbl_Teklif" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Satis">
+        <PropertyRef Name="satis_id" />
+      </Principal>
+      <Dependent Role="tbl_Teklif">
+        <PropertyRef Name="satis_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Sevkiyat_tbl_UrunBilgisi">
+    <End Role="tbl_UrunBilgisi" Type="Self.tbl_UrunBilgisi" Multiplicity="1" />
+    <End Role="tbl_Sevkiyat" Type="Self.tbl_Sevkiyat" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_UrunBilgisi">
+        <PropertyRef Name="urun_id" />
+      </Principal>
+      <Dependent Role="tbl_Sevkiyat">
+        <PropertyRef Name="urun_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Teklif_tbl_UrunBilgisi">
+    <End Role="tbl_UrunBilgisi" Type="Self.tbl_UrunBilgisi" Multiplicity="1" />
+    <End Role="tbl_Teklif" Type="Self.tbl_Teklif" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_UrunBilgisi">
+        <PropertyRef Name="urun_id" />
+      </Principal>
+      <Dependent Role="tbl_Teklif">
+        <PropertyRef Name="urun_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_UrunBilgisi_tbl_UrunTuru">
+    <End Role="tbl_UrunTuru" Type="Self.tbl_UrunTuru" Multiplicity="1" />
+    <End Role="tbl_UrunBilgisi" Type="Self.tbl_UrunBilgisi" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_UrunTuru">
+        <PropertyRef Name="uruntur_id" />
+      </Principal>
+      <Dependent Role="tbl_UrunBilgisi">
+        <PropertyRef Name="uruntur_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="NestleContext" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+    <EntitySet Name="tbl_BasvuruForm" EntityType="Self.tbl_BasvuruForm" />
+    <EntitySet Name="tbl_Departman" EntityType="Self.tbl_Departman" />
+    <EntitySet Name="tbl_Depolama" EntityType="Self.tbl_Depolama" />
+    <EntitySet Name="tbl_İnsanKaynaklari" EntityType="Self.tbl_İnsanKaynaklari" />
+    <EntitySet Name="tbl_KullaniciBilgileri" EntityType="Self.tbl_KullaniciBilgileri" />
+    <EntitySet Name="tbl_Kurumsal" EntityType="Self.tbl_Kurumsal" />
+    <EntitySet Name="tbl_Lojistik" EntityType="Self.tbl_Lojistik" />
+    <EntitySet Name="tbl_PersonelBilgileri" EntityType="Self.tbl_PersonelBilgileri" />
+    <EntitySet Name="tbl_Satis" EntityType="Self.tbl_Satis" />
+    <EntitySet Name="tbl_SatisDurumu" EntityType="Self.tbl_SatisDurumu" />
+    <EntitySet Name="tbl_Sevkiyat" EntityType="Self.tbl_Sevkiyat" />
+    <EntitySet Name="tbl_Teklif" EntityType="Self.tbl_Teklif" />
+    <EntitySet Name="tbl_UrunBilgisi" EntityType="Self.tbl_UrunBilgisi" />
+    <EntitySet Name="tbl_UrunTuru" EntityType="Self.tbl_UrunTuru" />
+    <AssociationSet Name="FK_tbl_İnsanKaynaklari_tbl_BasvuruForm" Association="Self.FK_tbl_İnsanKaynaklari_tbl_BasvuruForm">
+      <End Role="tbl_BasvuruForm" EntitySet="tbl_BasvuruForm" />
+      <End Role="tbl_İnsanKaynaklari" EntitySet="tbl_İnsanKaynaklari" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_PersonelBilgileri_tbl_Departman" Association="Self.FK_tbl_PersonelBilgileri_tbl_Departman">
+      <End Role="tbl_Departman" EntitySet="tbl_Departman" />
+      <End Role="tbl_PersonelBilgileri" EntitySet="tbl_PersonelBilgileri" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_UrunBilgisi_tbl_Depolama" Association="Self.FK_tbl_UrunBilgisi_tbl_Depolama">
+      <End Role="tbl_Depolama" EntitySet="tbl_Depolama" />
+      <End Role="tbl_UrunBilgisi" EntitySet="tbl_UrunBilgisi" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_İnsanKaynaklari_tbl_PersonelBilgileri" Association="Self.FK_tbl_İnsanKaynaklari_tbl_PersonelBilgileri">
+      <End Role="tbl_PersonelBilgileri" EntitySet="tbl_PersonelBilgileri" />
+      <End Role="tbl_İnsanKaynaklari" EntitySet="tbl_İnsanKaynaklari" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Sevkiyat_tbl_Lojistik" Association="Self.FK_tbl_Sevkiyat_tbl_Lojistik">
+      <End Role="tbl_Lojistik" EntitySet="tbl_Lojistik" />
+      <End Role="tbl_Sevkiyat" EntitySet="tbl_Sevkiyat" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Satis_tbl_SatisDurumu" Association="Self.FK_tbl_Satis_tbl_SatisDurumu">
+      <End Role="tbl_SatisDurumu" EntitySet="tbl_SatisDurumu" />
+      <End Role="tbl_Satis" EntitySet="tbl_Satis" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Satis_tbl_UrunBilgisi1" Association="Self.FK_tbl_Satis_tbl_UrunBilgisi1">
+      <End Role="tbl_UrunBilgisi" EntitySet="tbl_UrunBilgisi" />
+      <End Role="tbl_Satis" EntitySet="tbl_Satis" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Sevkiyat_tbl_Satis" Association="Self.FK_tbl_Sevkiyat_tbl_Satis">
+      <End Role="tbl_Satis" EntitySet="tbl_Satis" />
+      <End Role="tbl_Sevkiyat" EntitySet="tbl_Sevkiyat" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Teklif_tbl_Satis" Association="Self.FK_tbl_Teklif_tbl_Satis">
+      <End Role="tbl_Satis" EntitySet="tbl_Satis" />
+      <End Role="tbl_Teklif" EntitySet="tbl_Teklif" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Sevkiyat_tbl_UrunBilgisi" Association="Self.FK_tbl_Sevkiyat_tbl_UrunBilgisi">
+      <End Role="tbl_UrunBilgisi" EntitySet="tbl_UrunBilgisi" />
+      <End Role="tbl_Sevkiyat" EntitySet="tbl_Sevkiyat" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Teklif_tbl_UrunBilgisi" Association="Self.FK_tbl_Teklif_tbl_UrunBilgisi">
+      <End Role="tbl_UrunBilgisi" EntitySet="tbl_UrunBilgisi" />
+      <End Role="tbl_Teklif" EntitySet="tbl_Teklif" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_UrunBilgisi_tbl_UrunTuru" Association="Self.FK_tbl_UrunBilgisi_tbl_UrunTuru">
+      <End Role="tbl_UrunTuru" EntitySet="tbl_UrunTuru" />
+      <End Role="tbl_UrunBilgisi" EntitySet="tbl_UrunBilgisi" />
+    </AssociationSet>
+    <FunctionImport Name="sp_alterdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_creatediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_dropdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(db_Nestle2Model.sp_helpdiagramdefinition_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(db_Nestle2Model.sp_helpdiagrams_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_renamediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="new_diagramname" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_upgraddiagrams" />
+  </EntityContainer>
+  <ComplexType Name="sp_helpdiagramdefinition_Result">
+    <Property Type="Int32" Name="version" Nullable="true" />
+    <Property Type="Binary" Name="definition" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_helpdiagrams_Result">
+    <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
+    <Property Type="Int32" Name="OwnerID" Nullable="false" />
+  </ComplexType>
+</Schema>

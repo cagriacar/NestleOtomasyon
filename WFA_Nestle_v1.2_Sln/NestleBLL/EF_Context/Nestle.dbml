@@ -1,0 +1,147 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="db_Nestle2" Class="NestleDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-JBCRQ6H;Initial Catalog=db_Nestle2;Integrated Security=True" SettingsObjectName="NestleBLL.Properties.Settings" SettingsPropertyName="db_Nestle2ConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.tbl_PersonelBilgileri" Member="tbl_PersonelBilgileris">
+    <Type Name="tbl_PersonelBilgileri">
+      <Column Name="per_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="perAdi" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="perSoyadi" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="perDogumTarihi" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="perTcno" Type="System.String" DbType="NVarChar(11) NOT NULL" CanBeNull="false" />
+      <Column Name="perUnvan" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="perTelefon" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="perAdres" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="peril" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="perilce" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="perUlke" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="departman_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="perMail" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="perResim" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Association Name="tbl_Departman_tbl_PersonelBilgileri" Member="tbl_Departman" ThisKey="departman_id" OtherKey="departman_id" Type="tbl_Departman" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_Departman" Member="tbl_Departmans">
+    <Type Name="tbl_Departman">
+      <Column Name="departman_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="departmanAdi" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="tbl_Departman_tbl_PersonelBilgileri" Member="tbl_PersonelBilgileris" ThisKey="departman_id" OtherKey="departman_id" Type="tbl_PersonelBilgileri" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_BasvuruForm" Member="tbl_BasvuruForms">
+    <Type Name="tbl_BasvuruForm">
+      <Column Name="basvuru_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="basvuruAdi" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="basvuruSoyadi" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="basvuruDogumTarihi" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="basvuruCinsiyet" Type="System.String" DbType="NChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="basvuruYabanciDil" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="basvuruAskerlikDurumu" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="basvuruMedeniDurum" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="basvuruEgitim" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="basvuruDeneyim" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="basvuruAdres" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="basvuruTelefon" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="basvuruMail" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="basvuruResim" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_Depolama" Member="tbl_Depolamas">
+    <Type Name="tbl_Depolama">
+      <Column Name="depo_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="depoAdi" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="depoAdres" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Association Name="tbl_Depolama_tbl_UrunBilgisi" Member="tbl_UrunBilgisis" ThisKey="depo_id" OtherKey="depo_id" Type="tbl_UrunBilgisi" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_UrunBilgisi" Member="tbl_UrunBilgisis">
+    <Type Name="tbl_UrunBilgisi">
+      <Column Name="urun_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="urun_adi" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="uruntur_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="urunUretimTarihi" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="urunFiyati" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="urunMiktari" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="depo_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="tbl_UrunBilgisi_tbl_Satis" Member="tbl_Satis" ThisKey="urun_id" OtherKey="urun_id" Type="tbl_Satis" />
+      <Association Name="tbl_UrunBilgisi_tbl_Teklif" Member="tbl_Teklifs" ThisKey="urun_id" OtherKey="urun_id" Type="tbl_Teklif" />
+      <Association Name="tbl_UrunBilgisi_tbl_Sevkiyat" Member="tbl_Sevkiyats" ThisKey="urun_id" OtherKey="urun_id" Type="tbl_Sevkiyat" />
+      <Association Name="tbl_Depolama_tbl_UrunBilgisi" Member="tbl_Depolama" ThisKey="depo_id" OtherKey="depo_id" Type="tbl_Depolama" IsForeignKey="true" />
+      <Association Name="tbl_UrunTuru_tbl_UrunBilgisi" Member="tbl_UrunTuru" ThisKey="uruntur_id" OtherKey="uruntur_id" Type="tbl_UrunTuru" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_UrunTuru" Member="tbl_UrunTurus">
+    <Type Name="tbl_UrunTuru">
+      <Column Name="uruntur_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="uruntur_adi" Type="System.String" DbType="NChar(10) NOT NULL" CanBeNull="false" />
+      <Association Name="tbl_UrunTuru_tbl_UrunBilgisi" Member="tbl_UrunBilgisis" ThisKey="uruntur_id" OtherKey="uruntur_id" Type="tbl_UrunBilgisi" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_SatisDurumu" Member="tbl_SatisDurumus">
+    <Type Name="tbl_SatisDurumu">
+      <Column Name="satisDurumu_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="satisDurumu" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="tbl_SatisDurumu_tbl_Satis" Member="tbl_Satis" ThisKey="satisDurumu_id" OtherKey="satisDurumu_id" Type="tbl_Satis" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_Satis" Member="tbl_Satis">
+    <Type Name="tbl_Satis">
+      <Column Name="satis_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="FirmaAdi" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="SatisTarihi" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="TeslimAdresi" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="TeslimSehir" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="TeslimUlke" Type="System.String" DbType="NChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="TeslimTarihi" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="urun_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="satAdet" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="satisDurumu_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SatisTutari" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Association Name="tbl_Satis_tbl_Sevkiyat" Member="tbl_Sevkiyats" ThisKey="satis_id" OtherKey="satis_id" Type="tbl_Sevkiyat" />
+      <Association Name="tbl_SatisDurumu_tbl_Satis" Member="tbl_SatisDurumu" ThisKey="satisDurumu_id" OtherKey="satisDurumu_id" Type="tbl_SatisDurumu" IsForeignKey="true" />
+      <Association Name="tbl_UrunBilgisi_tbl_Satis" Member="tbl_UrunBilgisi" ThisKey="urun_id" OtherKey="urun_id" Type="tbl_UrunBilgisi" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_Teklif" Member="tbl_Teklifs">
+    <Type Name="tbl_Teklif">
+      <Column Name="teklif_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="teklifNo" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="tekFirmaAdi" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="urun_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="tekUrunMiktar" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="teklifTutar" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Association Name="tbl_UrunBilgisi_tbl_Teklif" Member="tbl_UrunBilgisi" ThisKey="urun_id" OtherKey="urun_id" Type="tbl_UrunBilgisi" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_Sevkiyat" Member="tbl_Sevkiyats">
+    <Type Name="tbl_Sevkiyat">
+      <Column Name="sev_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="satis_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="lojistik_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="urun_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="sevAdres" Type="System.String" DbType="NVarChar(250) NOT NULL" CanBeNull="false" />
+      <Association Name="tbl_Satis_tbl_Sevkiyat" Member="tbl_Satis" ThisKey="satis_id" OtherKey="satis_id" Type="tbl_Satis" IsForeignKey="true" />
+      <Association Name="tbl_UrunBilgisi_tbl_Sevkiyat" Member="tbl_UrunBilgisi" ThisKey="urun_id" OtherKey="urun_id" Type="tbl_UrunBilgisi" IsForeignKey="true" />
+      <Association Name="tbl_Lojistik_tbl_Sevkiyat" Member="tbl_Lojistik" ThisKey="lojistik_id" OtherKey="lojistik_id" Type="tbl_Lojistik" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_Lojistik" Member="tbl_Lojistiks">
+    <Type Name="tbl_Lojistik">
+      <Column Name="lojistik_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="lojistikTuru" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="tbl_Lojistik_tbl_Sevkiyat" Member="tbl_Sevkiyats" ThisKey="lojistik_id" OtherKey="lojistik_id" Type="tbl_Sevkiyat" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_KullaniciBilgileri" Member="tbl_KullaniciBilgileris">
+    <Type Name="tbl_KullaniciBilgileri">
+      <Column Name="kullaniciId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="kullaniciAdi" Type="System.String" DbType="NVarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="sifre" Type="System.String" DbType="NVarChar(250) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_Kurumsal" Member="tbl_Kurumsals">
+    <Type Name="tbl_Kurumsal">
+      <Column Name="kurumsal_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="hakkinda" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="slogan" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+</Database>

@@ -1,0 +1,147 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 13.125, 11.25" name="Nestle">
+  <DataContextMoniker Name="/NestleDataContext" />
+  <nestedChildShapes>
+    <classShape Id="a2c13136-b328-43cf-9716-2a1914dba6d4" absoluteBounds="1.25, 0.625, 2, 3.5016097005208326">
+      <DataClassMoniker Name="/NestleDataContext/tbl_PersonelBilgileri" />
+      <nestedChildShapes>
+        <elementListCompartment Id="106b0c7c-dd75-409f-a5a2-8a3db00ea931" absoluteBounds="1.2649999999999997, 1.085, 1.9700000000000002, 2.941609700520833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="ebeeb7b5-c758-43d8-a810-99a11a0e658f" absoluteBounds="3.875, 0.75, 2, 1.1939925130208333">
+      <DataClassMoniker Name="/NestleDataContext/tbl_Departman" />
+      <nestedChildShapes>
+        <elementListCompartment Id="929490f5-1a3d-460f-9f03-19e0a02e7710" absoluteBounds="3.8899999999999997, 1.21, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(3.875 : 1.34699625651042); (3.25 : 1.34699625651042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/NestleDataContext/tbl_Departman/tbl_Departman_tbl_PersonelBilgileri" />
+      <nodes>
+        <classShapeMoniker Id="ebeeb7b5-c758-43d8-a810-99a11a0e658f" />
+        <classShapeMoniker Id="a2c13136-b328-43cf-9716-2a1914dba6d4" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="51d92986-aba3-4155-8ab9-0f1385b12347" absoluteBounds="7.25, 2.75, 2, 3.5016097005208326">
+      <DataClassMoniker Name="/NestleDataContext/tbl_BasvuruForm" />
+      <nestedChildShapes>
+        <elementListCompartment Id="8e825181-9df2-4d6a-80ff-0d2bb7e202fd" absoluteBounds="7.265, 3.21, 1.9700000000000002, 2.941609700520833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="ef585698-6e25-422b-a020-8a0863aceb6d" absoluteBounds="4.125, 2.5, 2.125, 1.3862939453125">
+      <DataClassMoniker Name="/NestleDataContext/tbl_Depolama" />
+      <nestedChildShapes>
+        <elementListCompartment Id="413ae1a8-df61-4b5b-b398-33cc19e7cd41" absoluteBounds="4.14, 2.96, 2.0949999999999998, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="91be7405-1219-4466-a170-a3d8fb239db4" absoluteBounds="4.625, 4.5, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/NestleDataContext/tbl_UrunBilgisi" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a03139a8-9f0d-4d49-ba36-0a277bdecd6e" absoluteBounds="4.64, 4.96, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(5.4375 : 3.8862939453125); (5.4375 : 4.5)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/NestleDataContext/tbl_Depolama/tbl_Depolama_tbl_UrunBilgisi" />
+      <nodes>
+        <classShapeMoniker Id="ef585698-6e25-422b-a020-8a0863aceb6d" />
+        <classShapeMoniker Id="91be7405-1219-4466-a170-a3d8fb239db4" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="6e369dcc-6ff2-4b31-bac8-d31e7d4fe78e" absoluteBounds="6.5, 1, 2, 1.1939925130208333">
+      <DataClassMoniker Name="/NestleDataContext/tbl_UrunTuru" />
+      <nestedChildShapes>
+        <elementListCompartment Id="25b82973-d03f-4a26-acac-aab2ddbc01f2" absoluteBounds="6.515, 1.46, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(7.117187625 : 2.19399251302083); (7.117187625 : 6.54310468424479); (6.625 : 6.54310468424479)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/NestleDataContext/tbl_UrunTuru/tbl_UrunTuru_tbl_UrunBilgisi" />
+      <nodes>
+        <classShapeMoniker Id="6e369dcc-6ff2-4b31-bac8-d31e7d4fe78e" />
+        <classShapeMoniker Id="91be7405-1219-4466-a170-a3d8fb239db4" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="db74f9f4-b16f-4ecf-be7b-1089f25cd21a" absoluteBounds="4.625, 7.125, 2, 1.1939925130208333">
+      <DataClassMoniker Name="/NestleDataContext/tbl_SatisDurumu" />
+      <nestedChildShapes>
+        <elementListCompartment Id="da261930-2db5-4287-8882-d5e786bab390" absoluteBounds="4.64, 7.585, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="a80a1ba1-0a7d-404c-8b53-05116339dc90" absoluteBounds="1.75, 5.5, 2, 2.9247054036458331">
+      <DataClassMoniker Name="/NestleDataContext/tbl_Satis" />
+      <nestedChildShapes>
+        <elementListCompartment Id="0f6b3de3-7f8b-4aca-9e90-72f9864c3eda" absoluteBounds="1.7650000000000001, 5.96, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(4.625 : 7.72199625651042); (3.75 : 7.72199625651042)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/NestleDataContext/tbl_SatisDurumu/tbl_SatisDurumu_tbl_Satis" />
+      <nodes>
+        <classShapeMoniker Id="db74f9f4-b16f-4ecf-be7b-1089f25cd21a" />
+        <classShapeMoniker Id="a80a1ba1-0a7d-404c-8b53-05116339dc90" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(4.625 : 6.07774983723958); (3.75 : 6.07774983723958)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/NestleDataContext/tbl_UrunBilgisi/tbl_UrunBilgisi_tbl_Satis" />
+      <nodes>
+        <classShapeMoniker Id="91be7405-1219-4466-a170-a3d8fb239db4" />
+        <classShapeMoniker Id="a80a1ba1-0a7d-404c-8b53-05116339dc90" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="874906e5-4f75-4fbc-ab0f-16ce7295045b" absoluteBounds="6.25, 9, 2, 1.9631982421875">
+      <DataClassMoniker Name="/NestleDataContext/tbl_Teklif" />
+      <nestedChildShapes>
+        <elementListCompartment Id="62ceaa7a-4d7c-4954-8a4f-e21f71ef4f2e" absoluteBounds="6.265, 9.46, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(6.625 : 5.57774983723958); (7.04687525 : 5.57774983723958); (7.04687525 : 9)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/NestleDataContext/tbl_UrunBilgisi/tbl_UrunBilgisi_tbl_Teklif" />
+      <nodes>
+        <classShapeMoniker Id="91be7405-1219-4466-a170-a3d8fb239db4" />
+        <classShapeMoniker Id="874906e5-4f75-4fbc-ab0f-16ce7295045b" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="382f152a-5fa0-40bc-8db8-1900607f9bc0" absoluteBounds="9, 0.5, 2, 1.7708968098958331">
+      <DataClassMoniker Name="/NestleDataContext/tbl_Sevkiyat" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c4bb58ab-33b1-48d7-8df6-49cb2ac4b3cb" absoluteBounds="9.015, 0.96, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(3.75 : 6.89024983723958); (10.0625 : 6.89024983723958); (10.0625 : 2.27089680989583)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/NestleDataContext/tbl_Satis/tbl_Satis_tbl_Sevkiyat" />
+      <nodes>
+        <classShapeMoniker Id="a80a1ba1-0a7d-404c-8b53-05116339dc90" />
+        <classShapeMoniker Id="382f152a-5fa0-40bc-8db8-1900607f9bc0" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(6.625 : 6.36820469401042); (6.96354191666667 : 6.36820469401042 : JumpStart); (7.20052095833333 : 6.36820469401042 : JumpEnd); (9.6562475 : 6.36820469401042); (9.6562475 : 2.27089680989583)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/NestleDataContext/tbl_UrunBilgisi/tbl_UrunBilgisi_tbl_Sevkiyat" />
+      <nodes>
+        <classShapeMoniker Id="91be7405-1219-4466-a170-a3d8fb239db4" />
+        <classShapeMoniker Id="382f152a-5fa0-40bc-8db8-1900607f9bc0" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="8eec600f-a7cf-4231-9f51-e899bce5fa62" absoluteBounds="10.875, 3.125, 2, 1.1939925130208333">
+      <DataClassMoniker Name="/NestleDataContext/tbl_Lojistik" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a77d8dd3-840c-4cb5-89f5-9c0d70ac36fa" absoluteBounds="10.89, 3.585, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(11.9375005 : 3.125); (11.9375005 : 1.38544840494792); (11 : 1.38544840494792)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/NestleDataContext/tbl_Lojistik/tbl_Lojistik_tbl_Sevkiyat" />
+      <nodes>
+        <classShapeMoniker Id="8eec600f-a7cf-4231-9f51-e899bce5fa62" />
+        <classShapeMoniker Id="382f152a-5fa0-40bc-8db8-1900607f9bc0" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="4a0de6f4-76c7-4280-b25c-69fb89c504fe" absoluteBounds="5.625, 0.5, 2, 1.3862939453125">
+      <DataClassMoniker Name="/NestleDataContext/tbl_KullaniciBilgileri" />
+      <nestedChildShapes>
+        <elementListCompartment Id="38b38ca4-3448-4af8-a3c7-50ccfa192b25" absoluteBounds="5.64, 0.96, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="801c3d26-9cec-4411-afe6-1f3c438f44b6" absoluteBounds="4.625, 0.5, 2, 1.3862939453125">
+      <DataClassMoniker Name="/NestleDataContext/tbl_Kurumsal" />
+      <nestedChildShapes>
+        <elementListCompartment Id="803eb33e-f97e-46b9-9795-faead7098e66" absoluteBounds="4.64, 0.96, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>
